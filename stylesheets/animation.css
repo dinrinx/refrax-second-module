@@ -1,0 +1,136 @@
+/*движение игровых фигур в хедере*/
+@keyframes fly1 {
+  0% {
+    top: -5%;
+    left: 10%;
+  }
+  50% {
+    top: -10%;
+    left: 5%;
+  }
+  100% {
+    top: -5%;
+    left: 10%;
+  }
+}
+@keyframes whitejoystick-rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes fly2 {
+  0% {
+    bottom: 5%;
+    left: 15%;
+  }
+  50% {
+    bottom: 15%;
+    left: 5%;
+  }
+  100% {
+    bottom: 5%;
+    left: 15%;
+  }
+}
+@keyframes pinkjoystick-rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fly3 {
+  0% {
+    top: 5%;
+    left: 40%;
+  }
+  25% {
+    top: 10%;
+    left: 50%;
+  }
+  50% {
+    top: 0;
+    left: 40%;
+  }
+  25% {
+    top: 5%;
+    left: 50%;
+  }
+  100% {
+    top: 10%;
+    left: 40%;
+  }
+}
+
+@keyframes fly4 {
+  0% {
+    bottom: 20%;
+    left: 60%;
+  }
+  50% {
+    bottom: 10%;
+    left: 70%;
+  }
+  100% {
+    bottom: 15%;
+    left: 60%;
+  }
+}
+@keyframes yellowvrglasses-rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fly5 {
+  0% {
+    top: 5%;
+    right: 15%;
+  }
+  50% {
+    top: 15%;
+    right: 25%;
+  }
+  100% {
+    top: 5%;
+    right: 15%;
+  }
+}
+
+@keyframes purplejoystick-rot {
+  0% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* первая бегущая строка */
+@keyframes text {
+  0% {
+    transform: translate(-10%, 0);
+  }
+
+  100% {
+    transform: translate(-80%, 0);
+  }
+}

@@ -1,0 +1,113 @@
+html,
+body {
+  min-height: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  max-width: 1920px;
+  font-family: "Coolvetica";
+  background-color: #161616;
+  display: block;
+  margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+  height: 636px;
+}
+
+.intro-text {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: 260px;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  color: #ffffff;
+  -webkit-text-stroke: 100px #892ed6;
+  paint-order: stroke fill;
+  z-index: 2;
+}
+
+.white-joystick {
+  position: absolute;
+  width: 22%;
+  animation: 10s infinite linear fly1, 20s infinite whitejoystick-rot;
+  z-index: 1;
+}
+
+.pink-joystick {
+  position: absolute;
+  width: 12%;
+  animation: 10s infinite linear fly2, 20s infinite pinkjoystick-rot;
+  z-index: 1;
+}
+
+.blue-joystick {
+  position: absolute;
+  width: 8%;
+  animation: 10s infinite linear fly3, 20s infinite pinkjoystick-rot;
+  z-index: 3;
+}
+
+.yellow-vr-glasses {
+  position: absolute;
+  width: 14%;
+  animation: 10s infinite linear fly4, 20s infinite yellowvrglasses-rot;
+  z-index: 3;
+}
+
+.purple-joystick {
+  position: absolute;
+  width: 18%;
+  animation: 10s infinite linear fly5, 20s infinite purplejoystick-rot;
+  z-index: 1;
+}
+
+.running-line-first {
+  background-color: #9f48ea;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.running-line-first-content {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  text-transform: uppercase;
+  animation: text 4s infinite linear;
+}
+
+.running-line-first-text {
+  margin: 0;
+  padding: 0 3%;
+  font-size: 100px;
+  color: white;
+}
+
+.hedgehog-running {
+  margin: 0;
+  padding: 0;
+}
+
+.running-line-first-content:hover {
+  animation-play-state: paused;
+}
