@@ -1,15 +1,15 @@
-/*движение игровых фигур в хедере*/
+/*движение игровых фигур в первом экране*/
 @keyframes fly1 {
   0% {
-    top: -5%;
+    top: 2%;
     left: 10%;
   }
   50% {
-    top: -10%;
+    top: 7%;
     left: 5%;
   }
   100% {
-    top: -5%;
+    top: 2%;
     left: 10%;
   }
 }
@@ -94,7 +94,7 @@
 @keyframes fly5 {
   0% {
     top: 5%;
-    right: 15%;
+    right: 7%;
   }
   50% {
     top: 15%;
@@ -102,7 +102,7 @@
   }
   100% {
     top: 5%;
-    right: 15%;
+    right: 10%;
   }
 }
 
@@ -127,10 +127,342 @@
 /* первая бегущая строка */
 @keyframes text {
   0% {
-    transform: translate(-10%, 0);
+    transform: translate(0%, 0);
   }
 
   100% {
-    transform: translate(-80%, 0);
+    transform: translate(-33.33%, 0);
   }
+}
+
+/* анимация вращения для loading */
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* анимация бегущей строки для sharp-upper (слева направо) */
+@keyframes sharp-upper-move {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* анимация бегущей строки для sharp-down (справа налево) */
+@keyframes sharp-down-move {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* анимация движения first-bro по игровому полю */
+@keyframes first-bro-move {
+  0%,
+  7.14% {
+    top: 11%;
+    left: 31%;
+  }
+
+  7.14%,
+  14.28% {
+    top: 11%;
+    left: 47%;
+  }
+
+  14.28%,
+  21.42% {
+    top: 23%;
+    left: 60%;
+  }
+
+  21.42%,
+  28.56% {
+    top: 40%;
+    left: 60%;
+  }
+  35.7%,
+  42.84% {
+    top: 50%;
+    left: 45%;
+  }
+
+  42.84%,
+  49.98% {
+    top: 41%;
+    left: 25%;
+  }
+
+  49.98%,
+  57.12% {
+    top: 50%;
+    left: 11%;
+  }
+
+  57.12%,
+  64.26% {
+    top: 73%;
+    left: 11%;
+  }
+
+  64.26%,
+  71.4% {
+    top: 81%;
+    left: 25%;
+  }
+
+  71.4%,
+  78.54% {
+    top: 81%;
+    left: 41%;
+  }
+
+  78.54%,
+  85.68% {
+    top: 81%;
+    left: 57%;
+  }
+
+  85.68%,
+  92.82% {
+    top: 78%;
+    left: 74%;
+  }
+}
+
+/* анимация движения second-bro по игровому полю */
+@keyframes second-bro-move {
+  0%,
+  16.67% {
+    bottom: 9%;
+    left: 25%;
+  }
+  16.67%,
+  33.34% {
+    bottom: 9%;
+    left: 41%;
+  }
+  33.34%,
+  50.01% {
+    bottom: 9%;
+    left: 57%;
+  }
+  50.01%,
+  66.68% {
+    bottom: 11%;
+    left: 74%;
+  }
+  66.68%,
+  83.35% {
+    bottom: 37%;
+    left: 77%;
+  }
+  83.35%,
+  100% {
+    bottom: 60%;
+    left: 77%;
+  }
+}
+
+@keyframes sharp-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes sharp-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* падающие элементы с разными траекториями */
+@keyframes fall {
+  from {
+    top: -5vw;
+    transform: rotate(0deg) translateX(0);
+  }
+  to {
+    top: 40vw;
+    transform: rotate(360deg) translateX(0);
+  }
+}
+
+@keyframes fall-left {
+  from {
+    top: -5vw;
+    transform: rotate(0deg) translateX(-1vw);
+  }
+  to {
+    top: 40vw;
+    transform: rotate(360deg) translateX(-1vw);
+  }
+}
+
+@keyframes fall-right {
+  from {
+    top: -5vw;
+    transform: rotate(0deg) translateX(1vw);
+  }
+  to {
+    top: 40vw;
+    transform: rotate(360deg) translateX(1vw);
+  }
+}
+
+@keyframes fall-left-more {
+  from {
+    top: -5vw;
+    transform: rotate(0deg) translateX(-1.5vw);
+  }
+  to {
+    top: 40vw;
+    transform: rotate(360deg) translateX(-1.5vw);
+  }
+}
+
+@keyframes fall-right-more {
+  from {
+    top: -5vw;
+    transform: rotate(0deg) translateX(1.5vw);
+  }
+  to {
+    top: 40vw;
+    transform: rotate(360deg) translateX(1.5vw);
+  }
+}
+
+.blue-cube-first {
+  animation-name: fall-right;
+  animation-duration: 1.6s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.blue-cube-second {
+  animation-name: fall-left;
+  animation-duration: 5.1s;
+  animation-delay: 0.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.blue-cube-third {
+  animation-name: fall;
+  animation-duration: 2s;
+  animation-delay: 1.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.white-cube-first {
+  animation-name: fall-right-more;
+  animation-duration: 5.6s;
+  animation-delay: 0.2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.white-cube-second {
+  animation-name: fall-left-more;
+  animation-duration: 4.7s;
+  animation-delay: 1.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.white-cube-third {
+  animation-name: fall-right;
+  animation-duration: 3.1s;
+  animation-delay: 0.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pink-cube-first {
+  animation-name: fall-left;
+  animation-duration: 4.7s;
+  animation-delay: 1.9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pink-cube-second {
+  animation-name: fall;
+  animation-duration: 1.3s;
+  animation-delay: 0.1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.pink-cube-third {
+  animation-name: fall-right-more;
+  animation-duration: 3.8s;
+  animation-delay: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.yellow-cube-first {
+  animation-name: fall-left-more;
+  animation-duration: 5.8s;
+  animation-delay: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.yellow-cube-second {
+  animation-name: fall-right;
+  animation-duration: 2.4s;
+  animation-delay: 1.4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.yellow-cube-third {
+  animation-name: fall-left;
+  animation-duration: 6.1s;
+  animation-delay: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.purple-cube-first {
+  animation-name: fall;
+  animation-duration: 4.2s;
+  animation-delay: 1.1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.purple-cube-second {
+  animation-name: fall-right-more;
+  animation-duration: 5.3s;
+  animation-delay: 0.05s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.purple-cube-third {
+  animation-name: fall-left-more;
+  animation-duration: 1.7s;
+  animation-delay: 0.9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
