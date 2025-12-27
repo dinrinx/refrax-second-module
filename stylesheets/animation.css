@@ -135,6 +135,36 @@
   }
 }
 
+@keyframes text-vertical {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-33.33%);
+  }
+}
+
+@keyframes rotate-left {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-50%) rotate(-360deg);
+  }
+}
+
+@keyframes rotate-right {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
 /* анимация вращения для loading */
 @keyframes loading-rotate {
   0% {
@@ -465,4 +495,509 @@
   animation-delay: 0.9s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+/* анимация перестановки кнопок в строках */
+@keyframes firstrow-shuffle-1 {
+  0%,
+  25% {
+    order: 1;
+  }
+  25%,
+  50% {
+    order: 2;
+  }
+  50%,
+  75% {
+    order: 3;
+  }
+  75%,
+  100% {
+    order: 4;
+  }
+}
+
+@keyframes firstrow-shuffle-2 {
+  0%,
+  25% {
+    order: 2;
+  }
+  25%,
+  50% {
+    order: 3;
+  }
+  50%,
+  75% {
+    order: 4;
+  }
+  75%,
+  100% {
+    order: 1;
+  }
+}
+
+@keyframes firstrow-shuffle-3 {
+  0%,
+  25% {
+    order: 3;
+  }
+  25%,
+  50% {
+    order: 4;
+  }
+  50%,
+  75% {
+    order: 1;
+  }
+  75%,
+  100% {
+    order: 2;
+  }
+}
+
+@keyframes firstrow-shuffle-4 {
+  0%,
+  25% {
+    order: 4;
+  }
+  25%,
+  50% {
+    order: 1;
+  }
+  50%,
+  75% {
+    order: 2;
+  }
+  75%,
+  100% {
+    order: 3;
+  }
+}
+
+@keyframes secondrow-shuffle-1 {
+  0%,
+  25% {
+    order: 1;
+  }
+  25%,
+  50% {
+    order: 3;
+  }
+  50%,
+  75% {
+    order: 4;
+  }
+  75%,
+  100% {
+    order: 2;
+  }
+}
+
+@keyframes secondrow-shuffle-2 {
+  0%,
+  25% {
+    order: 2;
+  }
+  25%,
+  50% {
+    order: 4;
+  }
+  50%,
+  75% {
+    order: 1;
+  }
+  75%,
+  100% {
+    order: 3;
+  }
+}
+
+@keyframes secondrow-shuffle-3 {
+  0%,
+  25% {
+    order: 3;
+  }
+  25%,
+  50% {
+    order: 1;
+  }
+  50%,
+  75% {
+    order: 2;
+  }
+  75%,
+  100% {
+    order: 4;
+  }
+}
+
+@keyframes secondrow-shuffle-4 {
+  0%,
+  25% {
+    order: 4;
+  }
+  25%,
+  50% {
+    order: 2;
+  }
+  50%,
+  75% {
+    order: 3;
+  }
+  75%,
+  100% {
+    order: 1;
+  }
+}
+
+@keyframes thirdrow-shuffle-1 {
+  0%,
+  25% {
+    order: 1;
+  }
+  25%,
+  50% {
+    order: 4;
+  }
+  50%,
+  75% {
+    order: 2;
+  }
+  75%,
+  100% {
+    order: 3;
+  }
+}
+
+@keyframes thirdrow-shuffle-2 {
+  0%,
+  25% {
+    order: 2;
+  }
+  25%,
+  50% {
+    order: 1;
+  }
+  50%,
+  75% {
+    order: 3;
+  }
+  75%,
+  100% {
+    order: 4;
+  }
+}
+
+@keyframes thirdrow-shuffle-3 {
+  0%,
+  25% {
+    order: 3;
+  }
+  25%,
+  50% {
+    order: 2;
+  }
+  50%,
+  75% {
+    order: 4;
+  }
+  75%,
+  100% {
+    order: 1;
+  }
+}
+
+@keyframes thirdrow-shuffle-4 {
+  0%,
+  25% {
+    order: 4;
+  }
+  25%,
+  50% {
+    order: 3;
+  }
+  50%,
+  75% {
+    order: 1;
+  }
+  75%,
+  100% {
+    order: 2;
+  }
+}
+
+.triangle-button-firstrow {
+  animation: firstrow-shuffle-1 4s infinite steps(1, end);
+}
+
+.square-button-firstrow {
+  animation: firstrow-shuffle-2 4s infinite steps(1, end);
+}
+
+.circle-button-firstrow {
+  animation: firstrow-shuffle-3 4s infinite steps(1, end);
+}
+
+.cross-button-firstrow {
+  animation: firstrow-shuffle-4 4s infinite steps(1, end);
+}
+
+.square-button-secondrow {
+  animation: secondrow-shuffle-1 4s infinite steps(1, end);
+}
+
+.triangle-button-secondrow {
+  animation: secondrow-shuffle-2 4s infinite steps(1, end);
+}
+
+.cross-button-secondrow {
+  animation: secondrow-shuffle-3 4s infinite steps(1, end);
+}
+
+.circle-button-secondrow {
+  animation: secondrow-shuffle-4 4s infinite steps(1, end);
+}
+
+.cross-button-thirdrow {
+  animation: thirdrow-shuffle-1 4s infinite steps(1, end);
+}
+
+.circle-button-thirdrow {
+  animation: thirdrow-shuffle-2 4s infinite steps(1, end);
+}
+
+.triangle-button-thirdrow {
+  animation: thirdrow-shuffle-3 4s infinite steps(1, end);
+}
+
+.square-button-thirdrow {
+  animation: thirdrow-shuffle-4 4s infinite steps(1, end);
+}
+
+/* Покадровая анимация глаз */
+@keyframes eyes-frame {
+  0%,
+  33.33% {
+    transform: scale(1.08) translateY(2%);
+  }
+  33.33%,
+  66.66% {
+    transform: scale(1.08) translateY(-33.2%);
+  }
+  66.66%,
+  100% {
+    transform: scale(1.08) translateY(-66%);
+  }
+}
+
+/* Покадровая анимация рук  */
+@keyframes hand-frame-one {
+  0%,
+  14.28% {
+    opacity: 1;
+  }
+  14.28%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hand-frame-two {
+  0%,
+  14.28% {
+    opacity: 0;
+  }
+  14.28%,
+  28.57% {
+    opacity: 1;
+  }
+  28.57%,
+  71.43% {
+    opacity: 0;
+  }
+  71.43%,
+  85.71% {
+    opacity: 0;
+  }
+  85.71%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hand-frame-three {
+  0%,
+  28.57% {
+    opacity: 0;
+  }
+  28.57%,
+  42.86% {
+    opacity: 0;
+  }
+  42.86%,
+  57.14% {
+    opacity: 1;
+  }
+  57.14%,
+  71.43% {
+    opacity: 1;
+  }
+  71.43%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hand-frame-four {
+  0%,
+  42.86% {
+    opacity: 0;
+  }
+  42.86%,
+  57.14% {
+    opacity: 0;
+  }
+  57.14%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.purple-hand-left-one,
+.white-hand-one,
+.purple-hands-right-one {
+  animation: hand-frame-one 2s infinite;
+  transition: opacity 0.3s ease;
+}
+
+.purple-hand-left-two,
+.white-hand-two,
+.purple-hands-right-two {
+  animation: hand-frame-two 2s infinite;
+  transition: opacity 0.3s ease;
+}
+
+.purple-hand-left-three,
+.white-hand-three,
+.purple-hands-right-three {
+  animation: hand-frame-three 2s infinite;
+  transition: opacity 0.3s ease;
+}
+
+.purple-hand-left-four,
+.white-hand-four,
+.purple-hands-right-four {
+  animation: hand-frame-four 2s infinite;
+  transition: opacity 0.3s ease;
+}
+
+.white-hand-one,
+.white-hand-two,
+.white-hand-three,
+.white-hand-four {
+  animation-delay: 0.3s;
+}
+
+.purple-hands-right-one,
+.purple-hands-right-two,
+.purple-hands-right-three,
+.purple-hands-right-four {
+  animation-delay: 0.6s;
+}
+
+/* Анимация для звуковых палочек */
+@keyframes sound-wave {
+  0%,
+  100% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(25%);
+  }
+}
+
+.sound-one {
+  animation: sound-wave 1.2s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.sound-two {
+  animation: sound-wave 1.4s infinite ease-in-out;
+  animation-delay: 0.1s;
+}
+
+.sound-three {
+  animation: sound-wave 1.6s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.sound-four {
+  animation: sound-wave 1.3s infinite ease-in-out;
+  animation-delay: 0.15s;
+}
+
+.sound-five {
+  animation: sound-wave 1.5s infinite ease-in-out;
+  animation-delay: 0.25s;
+}
+
+.sound-six {
+  animation: sound-wave 1.7s infinite ease-in-out;
+  animation-delay: 0.3s;
+}
+
+.sound-seven {
+  animation: sound-wave 1.4s infinite ease-in-out;
+  animation-delay: 0.05s;
+}
+
+.sound-eight {
+  animation: sound-wave 1.6s infinite ease-in-out;
+  animation-delay: 0.35s;
+}
+
+.sound-nine {
+  animation: sound-wave 1.3s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+
+.sound-ten {
+  animation: sound-wave 1.5s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.sound-eleven {
+  animation: sound-wave 1.8s infinite ease-in-out;
+  animation-delay: 0.1s;
+}
+
+.sound-twelve {
+  animation: sound-wave 1.4s infinite ease-in-out;
+  animation-delay: 0.45s;
+}
+
+/* Анимация для monster-eyes */
+@keyframes monster-eyes-move {
+  0% {
+    transform: translate(calc(-50vw - 50%), -50%);
+  }
+  50% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(calc(-50vw - 50%), -50%);
+  }
+}
+
+/* Анимация opacity для SVG элементов в shapestext */
+@keyframes shapestext-opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

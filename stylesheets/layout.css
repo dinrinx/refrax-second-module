@@ -163,9 +163,7 @@ body {
 .second-screen {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  max-width: 100vw;
-  background-color: #161616;
+  min-height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -176,6 +174,8 @@ body {
   overflow: visible;
   z-index: auto;
   margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
 }
 
 .field {
@@ -205,7 +205,7 @@ body {
   width: 5vw;
   height: auto;
   z-index: 2;
-  animation: first-bro-move 10s infinite steps(1, end);
+  animation: first-bro-move 15s infinite steps(1, end);
 }
 
 .second-bro {
@@ -215,7 +215,7 @@ body {
   width: 5.5vw;
   height: auto;
   z-index: 2;
-  animation: second-bro-move 12s infinite steps(1, end);
+  animation: second-bro-move 6s infinite steps(1, end);
 }
 
 .sharp-running-line {
@@ -375,44 +375,646 @@ body {
 
 .joystick-buttons {
   background-color: #f5eff8;
+  width: 37.85vw;
+  height: 27.5vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1.94vw;
+  padding-right: 1.94vw;
+  padding-top: 2.5vw;
+  padding-bottom: 2.5vw;
+  gap: 1.8vw;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.joystick-buttons:hover {
+  background-color: #ffeccc;
+}
+
+.joystick-buttons-firstrow,
+.joystick-buttons-secondrow,
+.joystick-buttons-thirdrow {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4vw;
+  position: relative;
+}
+
+.joystick-buttons-firstrow img,
+.joystick-buttons-secondrow img,
+.joystick-buttons-thirdrow img {
+  position: relative;
+  display: flex;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.joystick-buttons-firstrow img:hover,
+.joystick-buttons-secondrow img:hover,
+.joystick-buttons-thirdrow img:hover {
+  opacity: 0;
+}
+
+.joystick-buttons img {
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.eyes {
+  height: 27.5vw;
+  width: 62.15vw;
+  min-width: 0;
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.eyes-three {
+  width: 100%;
+  height: 320%;
+  object-fit: cover;
+  object-position: center top;
+  animation: eyes-frame 3s infinite steps(1, end);
+  display: block;
+}
+
+.sound {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+.sound img {
+  display: block;
+  height: 100%;
+  width: auto;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  object-fit: fill;
+  filter: brightness(1);
+  transition: filter 0.3s ease;
+}
+
+.sound img:hover {
+  filter: brightness(0) invert(0.9);
+}
+
+.third-screen {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.gamepad {
+  width: 65.49vw;
+  height: 30.56vh;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+}
+
+.arrows {
+  position: absolute;
+  left: -5%;
+  top: 16%;
+  width: 17vw;
+  height: 19vw;
+}
+
+.arrow-top-normal {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  z-index: 1;
+}
+
+.arrow-top-hover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.arrows:hover .arrow-top-normal:hover ~ .arrow-top-hover,
+.arrow-top-normal:hover + .arrow-top-hover {
+  opacity: 1;
+}
+
+.arrow-bottom-normal {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  z-index: 1;
+}
+
+.arrow-bottom-hover {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.arrow-bottom-normal:hover + .arrow-bottom-hover {
+  opacity: 1;
+}
+
+.arrow-left-normal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 7.5vw;
+  height: 7vw;
+  z-index: 1;
+}
+
+.arrow-left-hover {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 7.5vw;
+  height: 7vw;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.arrow-left-normal:hover + .arrow-left-hover {
+  opacity: 1;
+}
+
+.arrow-right-normal {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 7.5vw;
+  height: 7vw;
+  z-index: 1;
+}
+
+.arrow-right-hover {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 7.5vw;
+  height: 7vw;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.arrow-right-normal:hover + .arrow-right-hover {
+  opacity: 1;
+}
+
+.buttons-right {
+  position: absolute;
+  right: -5%;
+  top: 20%;
+  width: 17.5vw;
+  height: 17.5vw;
+  z-index: 2;
+}
+
+.triangle-button-gamepad {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  z-index: 1;
+}
+
+.triangle-button-gamepad-hover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.triangle-button-gamepad:hover + .triangle-button-gamepad-hover {
+  opacity: 1;
+}
+
+.cross-button-gamepad {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  z-index: 1;
+}
+
+.cross-button-gamepad-hover {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6.5vw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.cross-button-gamepad:hover + .cross-button-gamepad-hover {
+  opacity: 1;
+}
+
+.square-button-gamepad {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 6.5vw;
+  height: auto;
+  z-index: 1;
+}
+
+.square-button-gamepad-hover {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 6.5vw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.square-button-gamepad:hover + .square-button-gamepad-hover {
+  opacity: 1;
+}
+
+.circle-button-gamepad {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 6.5vw;
+  height: auto;
+  z-index: 1;
+}
+
+.circle-button-gamepad-hover {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 6.5vw;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.circle-button-gamepad:hover + .circle-button-gamepad-hover {
+  opacity: 1;
+}
+
+.left-button {
+  position: absolute;
+  left: 23%;
+  top: 130%;
+  transform: translateY(-50%);
+  width: 12vw;
+  height: auto;
+  z-index: 2;
+  animation: rotate-left 2s infinite linear;
+}
+
+.right-button {
+  position: absolute;
+  right: 23%;
+  top: 130%;
+  transform: translateY(-50%);
+  width: 12vw;
+  height: auto;
+  z-index: 2;
+  animation: rotate-right 2s infinite linear;
 }
 
 .monster-and-text {
   background-color: #222;
+  width: 28.5vw;
+  height: 55.15vh;
+  box-sizing: border-box;
+  position: relative;
+  overflow: visible;
+  z-index: 2;
+}
+
+.monster-eyes {
+  width: 41vw;
+  height: 44vh;
+  object-fit: contain;
+  object-position: center center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: monster-eyes-move 3s infinite ease-in-out;
+  z-index: 2;
+}
+
+.monster-text {
+  margin: 0;
+  font-size: 53px;
+  color: white;
+  transform: translate(-50%, -50%) rotate(90deg);
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  z-index: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.monster-and-text p {
+  margin: 0;
 }
 
 .shapestext {
   background-color: #a646f8;
+  width: 28.5vw;
+  height: 46vh;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
 }
 
 .hands {
   background-color: #222;
+  width: 63.8vw;
+  height: 46vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.purple-hand-left,
+.white-hands,
+.purple-hands-right {
+  width: 42%;
+  height: 92%;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.purple-hand-left {
+  left: -2%;
+}
+
+.purple-hands-right {
+  right: -2%;
+}
+
+.purple-hand-left img,
+.white-hands img,
+.purple-hands-right img {
+  position: absolute;
+  top: 4%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+  opacity: 0;
+  will-change: opacity;
+}
+
+.shapestect-p-one {
+  font-size: 50px;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 1vh 1vw;
+  line-height: 1;
+}
+
+.shapestect-p-two {
+  font-size: 58px;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 1vh 1vw;
+  line-height: 1;
+}
+
+.shapestext img {
+  position: absolute;
+  z-index: 2;
+  animation: shapestext-opacity 3s infinite ease-in-out;
+}
+
+.circle-text-one {
+  top: 4.5%;
+  left: 3.4%;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+.cross-text-one {
+  top: 6.7%;
+  left: 13%;
+  width: 1.3vw;
+  height: 1.3vw;
+}
+
+.triangle-text-one {
+  top: 19.8%;
+  left: 10%;
+  width: 2vw;
+  height: 2vw;
+}
+
+.square-text-one {
+  top: 18.7%;
+  left: 24%;
+  width: 2.3vw;
+  height: 2.3vw;
+}
+
+.triangle-text-two {
+  top: 19.8%;
+  left: 40%;
+  width: 2vw;
+  height: 2vw;
+}
+
+.cross-text-two {
+  top: 34%;
+  left: 22%;
+  width: 1.3vw;
+  height: 1.3vw;
+}
+
+.square-text-two {
+  top: 32%;
+  left: 34.6%;
+  width: 2.4vw;
+  height: 2.4vw;
+}
+
+.cross-text-three {
+  top: 53%;
+  left: 13.5%;
+  width: 1.3vw;
+  height: 1.3vw;
+}
+
+.triangle-text-three {
+  top: 53%;
+  left: 35%;
+  width: 2vw;
+  height: 2vw;
+}
+
+.square-text-three {
+  top: 50%;
+  left: 58%;
+  width: 2.8vw;
+  height: 2.8vw;
+}
+
+.cross-text-four {
+  top: 69%;
+  left: 5.5%;
+  width: 1.3vw;
+  height: 1.3vw;
+}
+
+.triangle-text-four {
+  top: 69%;
+  left: 20%;
+  width: 2vw;
+  height: 2vw;
+}
+
+.triangle-text-five {
+  top: 69%;
+  left: 52%;
+  width: 2vw;
+  height: 2vw;
+}
+
+.circle-text-two {
+  top: 81.6%;
+  left: 29%;
+  width: 2.9vw;
+  height: 2.9vw;
 }
 
 .running-line-second {
   background-color: #c685fe;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 7.4vw;
+  z-index: 10;
+}
+
+.running-line-second-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  animation: text-vertical 4s infinite linear;
+  will-change: transform;
 }
 
 .running-line-second-text {
-  white-space: nowrap;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  text-transform: uppercase;
-  animation: text 4s infinite linear;
   margin: 0;
-  padding: 0 3%;
-  font-size: 6vw;
+  padding: 2vh 1vw;
+  font-size: 5.7vw;
   color: #8029ca;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  flex-shrink: 0;
 }
 
-.running-line-second-text:hover {
+.running-line-second-content:hover {
   animation-play-state: paused;
 }
 
