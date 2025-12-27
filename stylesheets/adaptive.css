@@ -37,7 +37,7 @@
 
   /* Running line first */
   .running-line-first-text {
-    font-size: 5vw;
+    font-size: 8.2vw;
   }
 
   .hedgehog-running {
@@ -91,33 +91,85 @@
     height: 10vw;
   }
 
+  /* Second screen для joystick-buttons и eyes - горизонтальный layout */
+  .second-screen:has(.joystick-buttons) {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
   /* Joystick buttons */
   .joystick-buttons {
-    width: 30.85vw;
+    width: 33.33%;
     height: 27.5vw;
     padding-left: 1.94vw;
     padding-right: 1.94vw;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
+    padding-top: 2.5vw;
+    padding-bottom: 2.5vw;
     gap: 1.8vw;
+    overflow: hidden;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
   }
 
   .joystick-buttons-firstrow,
   .joystick-buttons-secondrow,
   .joystick-buttons-thirdrow {
     gap: 2.4vw;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  .joystick-buttons-firstrow img,
+  .joystick-buttons-secondrow img,
+  .joystick-buttons-thirdrow img {
+    width: auto;
+    height: auto;
+    max-width: calc((100% - 7.2vw) / 4);
+    max-height: 100%;
+    min-width: 30px;
+    min-height: 30px;
+    object-fit: contain;
+    flex-shrink: 1;
+    flex-grow: 0;
+    display: block !important;
+    opacity: 1 !important;
+    position: relative;
+    visibility: visible !important;
   }
 
   .joystick-buttons img {
     width: auto;
     height: auto;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   /* Eyes */
   .eyes {
     height: 27.5vw;
-    width: 62.15vw;
-    right: 0vw;
+    width: 66.67%;
+    flex-shrink: 0;
+    display: block;
+    overflow: hidden;
+    background-color: #a646f8;
+  }
+
+  .eyes-three {
+    width: 100%;
+    height: 320%;
+    object-fit: cover;
+    object-position: center top;
+    animation: eyes-frame 3s infinite steps(1, end);
+    display: block;
   }
 
   /* Sound */
@@ -150,30 +202,32 @@
 
   /* Gamepad */
   .gamepad {
+    width: 65.49vw;
+    height: 55.15vh;
     position: relative;
-    height: auto !important;
-  }
-
-  .gamepad::before {
-    content: "";
-    display: block;
-    padding-top: 31%;
-    background: rgba(255, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1;
   }
 
   .gamepad-background {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 1;
+    pointer-events: none;
   }
 
   .arrows {
     width: 17vw;
     height: 19vw;
-    left: 2%;
-    top: 16%;
+    left: -13%;
+    top: 12%;
+    z-index: 2;
+    position: absolute;
   }
 
   .arrow-top-normal,
@@ -194,8 +248,10 @@
   .buttons-right {
     width: 17.5vw;
     height: 17.5vw;
-    right: 2%;
-    top: 20%;
+    right: -13%;
+    top: 12%;
+    z-index: 2;
+    position: absolute;
   }
 
   .triangle-button-gamepad,
@@ -209,9 +265,26 @@
     width: 6.5vw;
   }
 
-  .left-button,
+  .left-button {
+    position: absolute;
+    left: 15%;
+    top: 73%;
+    width: 14vw;
+    height: auto;
+    z-index: 20;
+    animation: rotate-left 2s infinite linear;
+    pointer-events: auto;
+  }
+
   .right-button {
-    width: 12vw;
+    position: absolute;
+    right: 15%;
+    top: 73%;
+    width: 14vw;
+    height: auto;
+    z-index: 20;
+    animation: rotate-right 2s infinite linear;
+    pointer-events: auto;
   }
 
   /* Shapestext */
@@ -359,5 +432,512 @@
   /* Running line third */
   .running-line-third-text {
     font-size: 5vw;
+  }
+}
+
+/* для мобильных устройств */
+@media screen and (max-width: 767px) {
+  /* Intro секция */
+  .intro {
+    height: 40vh;
+    min-height: 680px;
+  }
+
+  .intro-text {
+    font-size: clamp(36px, 20vw, 160px);
+  }
+
+  .intro-text-bg {
+    width: 80vw;
+    transform: translate(-48%, -47%);
+  }
+
+  .white-joystick {
+    width: 40%;
+  }
+
+  .pink-joystick {
+    width: 32%;
+  }
+
+  .blue-joystick {
+    width: 25%;
+  }
+
+  .yellow-vr-glasses {
+    width: 28%;
+  }
+
+  .purple-joystick {
+    width: 32%;
+  }
+
+  /* Running line first */
+  .running-line-first-text {
+    font-size: 18vw;
+  }
+
+  .hedgehog-running {
+    width: 16vw;
+  }
+
+  /* Second screen wrapper */
+  .second-screen-wrapper,
+  .second-screen {
+    flex-direction: column;
+  }
+
+  /* Field */
+  .field {
+    width: 100%;
+    height: 80vw;
+    max-height: 800px;
+  }
+
+  .field-img {
+    width: 93%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .first-bro {
+    width: 8vw;
+    min-width: 30px;
+  }
+
+  .second-bro {
+    width: 8vw;
+    min-width: 35px;
+  }
+
+  /* Sharp running line */
+  .sharp-running-line {
+    width: 100%;
+  }
+
+  /* Loading */
+  .loading {
+    width: 100%;
+    height: 35vw;
+    max-height: 380px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  /* Cubes */
+  .cubes {
+    width: 100%;
+    height: 45vw;
+    max-height: 360px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+
+  .cubes img {
+    width: 12vw;
+    height: 15vw;
+    min-width: 40px;
+    min-height: 50px;
+  }
+
+  .blue-cube-first {
+    left: 5%;
+  }
+
+  .blue-cube-second {
+    left: 25%;
+  }
+
+  .blue-cube-third {
+    left: 45%;
+  }
+
+  .white-cube-first {
+    left: 15%;
+  }
+
+  .white-cube-second {
+    left: 55%;
+  }
+
+  .white-cube-third {
+    left: 75%;
+  }
+
+  .pink-cube-first {
+    left: 10%;
+  }
+
+  .pink-cube-second {
+    left: 35%;
+  }
+
+  .pink-cube-third {
+    left: 65%;
+  }
+
+  .yellow-cube-first {
+    left: 20%;
+  }
+
+  .yellow-cube-second {
+    left: 50%;
+  }
+
+  .yellow-cube-third {
+    left: 80%;
+  }
+
+  .purple-cube-first {
+    left: 40%;
+  }
+
+  .purple-cube-second {
+    left: 0%;
+  }
+
+  .purple-cube-third {
+    left: 70%;
+  }
+
+  /* Joystick buttons */
+  .joystick-buttons {
+    width: 100%;
+    height: 40vw;
+    max-height: 320px;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    padding-top: 3vw;
+    padding-bottom: 3vw;
+    gap: 1.2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .joystick-buttons-firstrow,
+  .joystick-buttons-secondrow,
+  .joystick-buttons-thirdrow {
+    gap: 1.5vw;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+  }
+
+  .joystick-buttons img {
+    max-width: calc((100% - 4.5vw) / 4);
+    max-height: calc((100% - 2.4vw) / 3);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  /* Eyes */
+  .eyes {
+    width: 100%;
+    height: 40vw;
+    max-height: 320px;
+  }
+
+  /* Sound */
+  .sound {
+    height: 12vh;
+    min-height: 120px;
+  }
+
+  /* Third screen */
+  .third-screen {
+    flex-direction: column;
+  }
+
+  /* Monster and text */
+  .monster-and-text {
+    width: 100%;
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .monster-eyes {
+    width: 60vw;
+    height: 55vh;
+    max-width: 300px;
+    max-height: 350px;
+  }
+
+  .monster-text {
+    font-size: 32px;
+    left: 50%;
+  }
+
+  /* Gamepad */
+  .gamepad {
+    width: 100%;
+    height: 35vh;
+    min-height: 250px;
+    position: relative;
+  }
+
+  .gamepad::before {
+    display: none;
+  }
+
+  .gamepad-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .arrows {
+    width: 25vw;
+    height: 28vw;
+    max-width: 120px;
+    max-height: 140px;
+    left: 3%;
+    top: 20%;
+  }
+
+  .arrow-top-normal,
+  .arrow-top-hover,
+  .arrow-bottom-normal,
+  .arrow-bottom-hover {
+    width: 10vw;
+    max-width: 50px;
+  }
+
+  .arrow-left-normal,
+  .arrow-left-hover,
+  .arrow-right-normal,
+  .arrow-right-hover {
+    width: 11vw;
+    height: 10vw;
+    max-width: 55px;
+    max-height: 50px;
+  }
+
+  .buttons-right {
+    width: 25vw;
+    height: 25vw;
+    max-width: 120px;
+    max-height: 120px;
+    right: 3%;
+    top: 25%;
+  }
+
+  .triangle-button-gamepad,
+  .triangle-button-gamepad-hover,
+  .cross-button-gamepad,
+  .cross-button-gamepad-hover,
+  .square-button-gamepad,
+  .square-button-gamepad-hover,
+  .circle-button-gamepad,
+  .circle-button-gamepad-hover {
+    width: 10vw;
+    max-width: 50px;
+  }
+
+  .left-button,
+  .right-button {
+    width: 18vw;
+    max-width: 90px;
+  }
+
+  /* Shapestext */
+  .shapestext {
+    width: 100%;
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .shapestect-p-one {
+    font-size: 32px;
+    padding: 2vh 3vw;
+  }
+
+  .shapestect-p-two {
+    font-size: 36px;
+    padding: 2vh 3vw;
+  }
+
+  .shapestext img {
+    width: 4vw;
+    height: 4vw;
+    min-width: 20px;
+    min-height: 20px;
+  }
+
+  .circle-text-one {
+    width: 4.5vw;
+    height: 4.5vw;
+    min-width: 22px;
+    min-height: 22px;
+    top: 4.5%;
+    left: 3.4%;
+  }
+
+  .cross-text-one {
+    width: 2.3vw;
+    height: 2.3vw;
+    min-width: 12px;
+    min-height: 12px;
+    top: 6.7%;
+    left: 16.5%;
+  }
+
+  .triangle-text-one {
+    width: 3.5vw;
+    height: 3.5vw;
+    min-width: 18px;
+    min-height: 18px;
+    top: 19.2%;
+    left: 13%;
+  }
+
+  .square-text-one {
+    width: 5vw;
+    height: 5vw;
+    min-width: 25px;
+    min-height: 25px;
+    top: 19.3%;
+    left: 34.4%;
+  }
+
+  .triangle-text-two {
+    width: 3.5vw;
+    height: 3.5vw;
+    min-width: 18px;
+    min-height: 18px;
+    top: 19.2%;
+    left: 57%;
+  }
+
+  .cross-text-two {
+    width: 2.3vw;
+    height: 2.3vw;
+    min-width: 12px;
+    min-height: 12px;
+    top: 34.8%;
+    left: 30%;
+  }
+
+  .square-text-two {
+    width: 5vw;
+    height: 5vw;
+    min-width: 25px;
+    min-height: 25px;
+    top: 33.3%;
+    left: 49.2%;
+  }
+
+  .cross-text-three {
+    width: 2.3vw;
+    height: 2.3vw;
+    min-width: 12px;
+    min-height: 12px;
+    top: 54%;
+    left: 16.6%;
+  }
+
+  .triangle-text-three {
+    width: 3.5vw;
+    height: 3.5vw;
+    min-width: 18px;
+    min-height: 18px;
+    top: 53%;
+    left: 46%;
+  }
+
+  .square-text-three {
+    width: 7vw;
+    height: 7vw;
+    min-width: 35px;
+    min-height: 35px;
+    top: 52.5%;
+    left: 78.5%;
+  }
+
+  .cross-text-four {
+    width: 2.3vw;
+    height: 2.3vw;
+    min-width: 12px;
+    min-height: 12px;
+    top: 70%;
+    left: 5.5%;
+  }
+
+  .triangle-text-four {
+    width: 3.5vw;
+    height: 3.5vw;
+    min-width: 18px;
+    min-height: 18px;
+    top: 68.2%;
+    left: 26%;
+  }
+
+  .triangle-text-five {
+    width: 3.5vw;
+    height: 3.5vw;
+    min-width: 18px;
+    min-height: 18px;
+    top: 68.2%;
+    left: 69%;
+  }
+
+  .circle-text-two {
+    width: 7vw;
+    height: 7vw;
+    min-width: 35px;
+    min-height: 35px;
+    top: 83%;
+    left: 38.7%;
+  }
+
+  /* Hands */
+  .hands {
+    width: 100%;
+    height: 50vh;
+    min-height: 350px;
+  }
+
+  .purple-hand-left,
+  .white-hands,
+  .purple-hands-right {
+    width: 33.333%;
+  }
+
+  /* Running line second */
+  .running-line-second {
+    position: static;
+    width: 100%;
+    min-width: 100%;
+    height: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+  }
+
+  .running-line-second-content {
+    flex-direction: row;
+    animation: text 3s infinite linear;
+  }
+
+  .running-line-second-text {
+    font-size: 5vw;
+    padding: 2vh 2vw;
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+  }
+
+  /* Running line third */
+  .running-line-third-text {
+    font-size: 4vw;
   }
 }
