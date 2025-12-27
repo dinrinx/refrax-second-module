@@ -1,0 +1,363 @@
+/* Адаптивные стили для планшета */
+@media (max-width: 1024px) {
+  /* Intro секция */
+  .intro {
+    height: 50vh;
+    min-height: 644px;
+  }
+
+  .intro-text {
+    font-size: clamp(52px, 19vw, 210px);
+  }
+
+  .intro-text-bg {
+    width: 75vw;
+    transform: translate(-48%, -47%);
+  }
+
+  .white-joystick {
+    width: 23%;
+  }
+
+  .pink-joystick {
+    width: 15%;
+  }
+
+  .blue-joystick {
+    width: 13%;
+  }
+
+  .yellow-vr-glasses {
+    width: 20%;
+  }
+
+  .purple-joystick {
+    width: 22%;
+  }
+
+  /* Running line first */
+  .running-line-first-text {
+    font-size: 5vw;
+  }
+
+  .hedgehog-running {
+    width: 8vw;
+  }
+
+  /* Field */
+  .field {
+    width: 62.01vw;
+    height: 44.09vw;
+  }
+
+  .field-img {
+    width: 88%;
+    height: 92.8%;
+    object-fit: contain;
+    object-position: right center;
+  }
+
+  .first-bro {
+    width: 5vw;
+  }
+
+  .second-bro {
+    width: 5.5vw;
+  }
+
+  /* Sharp running line */
+  .sharp-running-line {
+    width: 62.01vw;
+  }
+
+  /* Loading */
+  .loading {
+    width: 37.99vw;
+    height: 27.57vw;
+    margin-left: auto;
+    margin-top: 0;
+  }
+
+  /* Cubes */
+  .cubes {
+    width: 37.99vw;
+    height: 45.63vw;
+    margin-left: auto;
+    margin-top: -27.57vw;
+  }
+
+  .cubes img {
+    width: 8vw;
+    height: 10vw;
+  }
+
+  /* Joystick buttons */
+  .joystick-buttons {
+    width: 30.85vw;
+    height: 27.5vw;
+    padding-left: 1.94vw;
+    padding-right: 1.94vw;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    gap: 1.8vw;
+  }
+
+  .joystick-buttons-firstrow,
+  .joystick-buttons-secondrow,
+  .joystick-buttons-thirdrow {
+    gap: 2.4vw;
+  }
+
+  .joystick-buttons img {
+    width: auto;
+    height: auto;
+  }
+
+  /* Eyes */
+  .eyes {
+    height: 27.5vw;
+    width: 62.15vw;
+    right: 0vw;
+  }
+
+  /* Sound */
+  .sound {
+    height: 15vh;
+    min-height: 228px;
+  }
+
+  /* Third screen */
+  .third-screen {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  /* Monster and text */
+  .monster-and-text {
+    width: 28.5vw;
+    height: 55.15vh;
+  }
+
+  .monster-eyes {
+    width: 38vw;
+    height: 40vh;
+  }
+
+  .monster-text {
+    font-size: 48px;
+    left: 60%;
+  }
+
+  /* Gamepad */
+  .gamepad {
+    position: relative;
+    height: auto !important;
+  }
+
+  .gamepad::before {
+    content: "";
+    display: block;
+    padding-top: 31%;
+    background: rgba(255, 0, 0, 0.1);
+  }
+
+  .gamepad-background {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .arrows {
+    width: 17vw;
+    height: 19vw;
+    left: 2%;
+    top: 16%;
+  }
+
+  .arrow-top-normal,
+  .arrow-top-hover,
+  .arrow-bottom-normal,
+  .arrow-bottom-hover {
+    width: 6.5vw;
+  }
+
+  .arrow-left-normal,
+  .arrow-left-hover,
+  .arrow-right-normal,
+  .arrow-right-hover {
+    width: 7.5vw;
+    height: 7vw;
+  }
+
+  .buttons-right {
+    width: 17.5vw;
+    height: 17.5vw;
+    right: 2%;
+    top: 20%;
+  }
+
+  .triangle-button-gamepad,
+  .triangle-button-gamepad-hover,
+  .cross-button-gamepad,
+  .cross-button-gamepad-hover,
+  .square-button-gamepad,
+  .square-button-gamepad-hover,
+  .circle-button-gamepad,
+  .circle-button-gamepad-hover {
+    width: 6.5vw;
+  }
+
+  .left-button,
+  .right-button {
+    width: 12vw;
+  }
+
+  /* Shapestext */
+  .shapestext {
+    width: 28.5vw;
+    height: 46vh;
+  }
+
+  .shapestect-p-one {
+    font-size: 50px;
+    padding: 1vh 1vw;
+  }
+
+  .shapestect-p-two {
+    font-size: 54px;
+    padding: 1vh 1vw;
+  }
+
+  .shapestext img {
+    width: auto;
+    height: auto;
+  }
+
+  .circle-text-one {
+    width: 2.5vw;
+    height: 2.5vw;
+    top: 4.5%;
+    left: 3.4%;
+  }
+
+  .cross-text-one {
+    width: 1.3vw;
+    height: 1.3vw;
+    top: 6.7%;
+    left: 16.5%;
+  }
+
+  .triangle-text-one {
+    width: 2vw;
+    height: 2vw;
+    top: 19.2%;
+    left: 13%;
+  }
+
+  .square-text-one {
+    width: 3.6vw;
+    height: 3.6vw;
+    top: 19.3%;
+    left: 34.4%;
+  }
+
+  .triangle-text-two {
+    width: 2vw;
+    height: 2vw;
+    top: 19.2%;
+    left: 57%;
+  }
+
+  .cross-text-two {
+    width: 1.3vw;
+    height: 1.3vw;
+    top: 34.8%;
+    left: 30%;
+  }
+
+  .square-text-two {
+    width: 3.6vw;
+    height: 3.6vw;
+    top: 33.3%;
+    left: 49.2%;
+  }
+
+  .cross-text-three {
+    width: 1.3vw;
+    height: 1.3vw;
+    top: 54%;
+    left: 16.6%;
+  }
+
+  .triangle-text-three {
+    width: 2vw;
+    height: 2vw;
+    top: 53%;
+    left: 46%;
+  }
+
+  .square-text-three {
+    width: 5vw;
+    height: 5vw;
+    top: 52.5%;
+    left: 78.5%;
+  }
+
+  .cross-text-four {
+    width: 1.3vw;
+    height: 1.3vw;
+    top: 70%;
+    left: 5.5%;
+  }
+
+  .triangle-text-four {
+    width: 2vw;
+    height: 2vw;
+    top: 68.2%;
+    left: 26%;
+  }
+
+  .triangle-text-five {
+    width: 2vw;
+    height: 2vw;
+    top: 68.2%;
+    left: 69%;
+  }
+
+  .circle-text-two {
+    width: 5vw;
+    height: 5vw;
+    top: 83%;
+    left: 38.7%;
+  }
+
+  /* Hands */
+  .hands {
+    width: 63.8vw;
+    height: 46vh;
+  }
+
+  .purple-hand-left,
+  .white-hands,
+  .purple-hands-right {
+    width: 42%;
+  }
+
+  /* Running line second */
+  .running-line-second {
+    min-width: 7.4vw;
+    width: auto;
+  }
+
+  .running-line-second-text {
+    font-size: 5.7vw;
+    padding: 2vh 1vw;
+  }
+
+  /* Running line third */
+  .running-line-third-text {
+    font-size: 5vw;
+  }
+}

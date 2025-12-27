@@ -2,5 +2,7 @@
   font-family: "Coolvetica";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/coolvetica.woff") format("woff");
+  src: url("../fonts/coolvetica.woff") format("woff"),
+       url("../fonts/coolvetica rg.ttf") format("truetype");
+  font-display: swap;
 }
